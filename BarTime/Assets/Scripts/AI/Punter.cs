@@ -21,10 +21,34 @@ public class Punter : StateObject
     public float Hunger = 100;
     public float Drunkenness = 100;
 
+    public Punter Victim;
+    public void Start()
+    {
+        BaseSpeed = Speed;
+        CurrentState = new Move();
+        Rig2D = GetComponent<Rigidbody2D>();
+    }
 
 
-    public State CurrentState;
+    public StateObject Target;
 
 
-   
+    public void Update()
+    {
+        if (Active)
+        {
+            CurrentState.Execute(this);
+        }
+    }
+
+    public override bool Move()
+    {
+        if(CanMove)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 }
