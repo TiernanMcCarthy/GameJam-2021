@@ -46,7 +46,7 @@ public class Punter : StateObject
     private float DecayTime;
     private float ThrowTime = 0;
 
-    public TempCricketer tp; 
+    public ThrowingScript tp; 
 
 
     public void Start()
@@ -54,7 +54,7 @@ public class Punter : StateObject
         BaseSpeed = Speed;
         CurrentState = new Move();
         Rig = GetComponent<Rigidbody>();
-        tp = GetComponent<TempCricketer>();
+        tp = GetComponent<ThrowingScript>();
     }
 
 
@@ -95,17 +95,20 @@ public class Punter : StateObject
                 if (Target.GetComponent<Chair>().Occupied)
                 {
                     CurrentState = new Evaluate();
+
                 }
-                Debug.Log("WHNSAFHSAFHSAF");
-                if (Vector3.Distance(transform.position, Target.transform.position) <= 2.0f)
+                else
                 {
-                    transform.position = Target.transform.position + Vector3.up * 2;
-                    Rig.velocity = new Vector3(0, 0, 0);
-                    Rig.isKinematic = true;
-                    Target.GetComponent<Chair>().Occupied = true;
-                    SatDown = true;
-                    Target = null;
-                    CurrentState = new SittingState();
+                    if (Vector3.Distance(transform.position, Target.transform.position) <= 2.0f)
+                    {
+                        transform.position = Target.transform.position + Vector3.up * 0.3f;
+                        Rig.velocity = new Vector3(0, 0, 0);
+                        Rig.isKinematic = true;
+                        Target.GetComponent<Chair>().Occupied = true;
+                        SatDown = true;
+                        Target = null;
+                        CurrentState = new SittingState();
+                    }
                 }
             }
 

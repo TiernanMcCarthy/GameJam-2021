@@ -11,15 +11,17 @@ public class Table : MonoBehaviour
 	[SerializeField]
 	private int minChairs, MaxChairs;
 
-	public GameObject chairPrefab;
+	public Chair chairPrefab;
 
-	public List<GameObject> inhabitantList;
+	public List<Punter> inhabitantList;
 
-	public List<GameObject> chairList;
+	public List<Chair> chairList;
 
-
-	public void OnValidate()
+	public bool Team;
+	
+	public void Start()
 	{
+		rejiggyTables = true;
 		if (rejiggyTables && Application.isPlaying)
 		{
 			if (useRandomNumber) numberOfChairs = Random.Range(minChairs, MaxChairs);
@@ -30,7 +32,7 @@ public class Table : MonoBehaviour
 	}
 
 
-	public void SpawnChairsAroundTable(int chairs, Vector3 point, float radius)
+    public void SpawnChairsAroundTable(int chairs, Vector3 point, float radius)
 	{
 		foreach (var chair in chairList)
 		{
@@ -54,10 +56,10 @@ public class Table : MonoBehaviour
 
 			/* Now spawn */
 			var chair = Instantiate(chairPrefab, spawnPos, Quaternion.identity);
-
+			chair.Owner = this;
 			/* Add chair to list */
 			chairList.Add(chair);
-
+			
 			/* Rotate the enemy to face towards player */
 			chair.transform.LookAt(point);
 

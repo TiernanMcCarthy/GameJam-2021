@@ -83,7 +83,7 @@ public class DesirabilityBrain
             if (hitList[i].gameObject != MainActor.gameObject && hitList[i].gameObject.GetComponent<Chair>())
             {
 
-                if (hitList[i].gameObject.GetComponentInParent<Chair>().Occupied == false)
+                if (hitList[i].gameObject.GetComponentInParent<Chair>().Occupied == false && hitList[i].gameObject.GetComponentInParent<Chair>().Owner.Team==MainActor.Team )
                 {
                     Dist Close = new Dist(i, hitList[i].gameObject.GetComponentInParent<Chair>());
                     ClosestPositions.Add(Close);

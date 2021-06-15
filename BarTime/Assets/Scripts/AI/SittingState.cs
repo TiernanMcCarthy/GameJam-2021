@@ -13,7 +13,7 @@ public class SittingState : State
 
         DesirabilityBrain desirabilityBrain = new DesirabilityBrain(temp);
 
-       // Debug.Log(desirabilityBrain.ThrowBottleDesirability());
+        // Debug.Log(desirabilityBrain.ThrowBottleDesirability());
 
         if (desirabilityBrain.ThrowBottleDesirability() > temp.ThrowLiklihood)
         {
@@ -22,6 +22,12 @@ public class SittingState : State
             temp.tp.target = temp.Victim.gameObject;
             temp.tp.yeetItem = true;
             temp.SetThrowTime();
+        }
+
+
+        if (temp.Happiness == 0 || temp.Angriness==20)
+        {
+            //Leave lmao
         }
         // throw new System.NotImplementedException();
     }
