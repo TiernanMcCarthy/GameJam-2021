@@ -275,6 +275,7 @@ MonoBehaviour:
   Speed: 5
   Damage: 10
   SatDown: 0
+  Team: 0
   Happiness: 10
   Angriness: 10
   Generosity: 10
@@ -290,6 +291,7 @@ MonoBehaviour:
   ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
+  tp: {fileID: 0}
   Target: {fileID: 0}
 --- !u!23 &41314951
 MeshRenderer:
@@ -556,6 +558,7 @@ MonoBehaviour:
   Speed: 5
   Damage: 10
   SatDown: 0
+  Team: 0
   Happiness: 10
   Angriness: 10
   Generosity: 10
@@ -571,6 +574,7 @@ MonoBehaviour:
   ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
+  tp: {fileID: 0}
   Target: {fileID: 0}
 --- !u!23 &665513133
 MeshRenderer:
@@ -1064,6 +1068,7 @@ MonoBehaviour:
   Speed: 5
   Damage: 10
   SatDown: 0
+  Team: 0
   Happiness: 10
   Angriness: 10
   Generosity: 10
@@ -1079,6 +1084,7 @@ MonoBehaviour:
   ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
+  tp: {fileID: 0}
   Target: {fileID: 0}
 --- !u!23 &1266612769
 MeshRenderer:
@@ -1200,7 +1206,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275867333}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742749894a5f3ff41b337105b1c1e76c, type: 3}
   m_Name: 
@@ -1214,6 +1220,7 @@ MonoBehaviour:
   Speed: 5
   Damage: 10
   SatDown: 0
+  Team: 1
   Happiness: 10
   Angriness: 10
   Generosity: 10
@@ -1222,13 +1229,14 @@ MonoBehaviour:
   Strength: 10
   SpeedCheese: 10
   Charisma: 10
-  Hunger: 100
+  Hunger: 10
   Drunkenness: 100
   TimeBetweenDecay: 3
   ThrowInterval: 10
   ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
+  tp: {fileID: 0}
   Target: {fileID: 0}
 --- !u!23 &1275867337
 MeshRenderer:
@@ -1614,6 +1622,7 @@ GameObject:
   - component: {fileID: 1504593486}
   - component: {fileID: 1504593487}
   - component: {fileID: 1504593488}
+  - component: {fileID: 1504593492}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -1642,6 +1651,7 @@ MonoBehaviour:
   Speed: 5
   Damage: 10
   SatDown: 0
+  Team: 0
   Happiness: 10
   Angriness: 10
   Generosity: 10
@@ -1657,6 +1667,7 @@ MonoBehaviour:
   ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
+  tp: {fileID: 0}
   Target: {fileID: 0}
 --- !u!65 &1504593487
 BoxCollider:
@@ -1750,6 +1761,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1504593492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504593485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e97ba25f089e66469fd02cc717b478c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yeetItem: 0
+  itemPrefabList:
+  - {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
+  - {fileID: 2432632690476805042, guid: 0405606fba36c24419544340405d8ba0, type: 3}
+  - {fileID: 6536926009706387203, guid: 138fc82212a1067409d3c7d91e8f8e8d, type: 3}
+  minHeight: 0.8
+  maxHeight: 2.5
+  target: {fileID: 0}
+  rotationSpeed: 15
 --- !u!1 &1673869815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,6 +1984,7 @@ MonoBehaviour:
   Speed: 5
   Damage: 10
   SatDown: 0
+  Team: 0
   Happiness: 10
   Angriness: 10
   Generosity: 10
@@ -1967,6 +2000,7 @@ MonoBehaviour:
   ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
+  tp: {fileID: 0}
   Target: {fileID: 0}
 --- !u!23 &1699495281
 MeshRenderer:

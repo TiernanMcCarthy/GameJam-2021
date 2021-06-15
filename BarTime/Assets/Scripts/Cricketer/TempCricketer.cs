@@ -5,7 +5,7 @@ using UnityEngine;
 public class TempCricketer : MonoBehaviour
 {
 	[SerializeField]
-	private bool yeetItem;
+	public bool yeetItem;
 
 	public List<GameObject> itemPrefabList;
 
@@ -18,7 +18,7 @@ public class TempCricketer : MonoBehaviour
 	[SerializeField]
 	private float rotationSpeed;
 
-	public void OnValidate()
+	public void FixedUpdate()
 	{
 		if (yeetItem && Application.isPlaying)
 		{
