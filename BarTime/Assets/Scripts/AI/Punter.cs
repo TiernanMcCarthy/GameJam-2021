@@ -13,6 +13,7 @@ public class Punter : StateObject
     public float Speed = 5.0f;
     public float Damage = 10;
     public bool SatDown = false;
+    public bool Team = false;   //False one, True the other
 
 
     [Header("Personality")]
@@ -45,7 +46,7 @@ public class Punter : StateObject
     private float DecayTime;
     private float ThrowTime = 0;
 
-
+    public TempCricketer tp; 
 
 
     public void Start()
@@ -53,6 +54,7 @@ public class Punter : StateObject
         BaseSpeed = Speed;
         CurrentState = new Move();
         Rig = GetComponent<Rigidbody>();
+        tp = GetComponent<TempCricketer>();
     }
 
 
@@ -154,7 +156,24 @@ public class Punter : StateObject
 
 
     }
+   
 
+    public void FindTarget()
+    {
+        Punter[] temp=FindObjectsOfType<Punter>();
+
+        List<Punter> sorted = new List<Punter>();
+        foreach(Punter el in temp)
+        {
+            if(el.Team!=Team)
+            {
+                sorted.Add(el);
+            }
+        }
+
+        Victim = sorted[Random.Range(0, sorted.Count - 1)];
+
+    }
 
 
 }
