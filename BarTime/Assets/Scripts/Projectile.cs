@@ -16,6 +16,8 @@ public class Projectile : MonoBehaviour
 
 	public float rotationMultiplier;
 
+	public GameObject thrower;
+
 	[SerializeField]
 	public float speedMultiplier = 2f;
 
@@ -44,6 +46,9 @@ public class Projectile : MonoBehaviour
 
 	public void OnCollisionEnter(Collision collision)
 	{
-		shouldParabola = false;
+		if (!collision.gameObject.Equals(thrower))
+		{
+			shouldParabola = false;
+		}
 	}
 }

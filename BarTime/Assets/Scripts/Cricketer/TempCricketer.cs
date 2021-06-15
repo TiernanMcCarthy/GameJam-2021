@@ -30,11 +30,11 @@ public class TempCricketer : MonoBehaviour
 			var projectileScript = itemToYeet.AddComponent<Projectile>();
 
 			projectileScript.startingPos = transform.position;
-			projectileScript.startingPos.y += .5f;
 
 			projectileScript.height = Random.Range(minHeight, maxHeight);
 			projectileScript.target = target;
 			projectileScript.rotationMultiplier = rotationSpeed;
+			projectileScript.thrower = gameObject;
 
 			yeetItem = false;
 		}
