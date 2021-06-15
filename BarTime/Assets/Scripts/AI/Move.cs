@@ -4,14 +4,15 @@ public class Move : State
     private float MaxDistance = 0.3f;
     public override void Execute(StateObject s)
     {
-        Vector2 temp = new Vector2(s.transform.position.x, s.transform.position.y);
-        if (Vector2.Distance(temp, s.MoveToLocation) > MaxDistance)
+        //Vector2 temp = new Vector2(s.transform.position.x, s.transform.position.y);
+       // Debug.Log(Vector2.Distance(temp, s.MoveToLocation));
+        if (Vector3.Distance(s.transform.position, s.MoveToLocation) > MaxDistance)
         {
 
             if (s.Move())
             {
-                temp =  s.MoveToLocation- temp;
-                s.Rig2D.velocity = temp.normalized * s.BaseSpeed;
+                Vector3 temp =  s.MoveToLocation- s.transform.position;
+                s.Rig.velocity = temp.normalized * s.BaseSpeed;
 
 
             }
@@ -19,7 +20,7 @@ public class Move : State
         }
         else
         {
-            s.Rig2D.velocity = Vector2.zero;
+            s.Rig.velocity = Vector2.zero;
             s.CurrentState = new Evaluate();
         }
 
