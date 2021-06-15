@@ -14,8 +14,10 @@ public class LeaveState : State
         temp.Target = local.Exit;
         temp.Rig.isKinematic = false;
         temp.CurrentState = new Move();
-
-        temp.SitIn.DropMoney(temp.Generosity * Multiplier);
+        if (temp.NumberOfCheeseToSatisfy <= 0)
+        {
+            temp.SitIn.DropMoney(temp.Generosity * Multiplier);
+        }
         temp.SitIn = null;
     }
 

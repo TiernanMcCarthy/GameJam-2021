@@ -41,12 +41,62 @@ public class Punter : StateObject
 
     public Chair SitIn;
     
-
     //Local Variables
     private float DecayTime;
     private float ThrowTime = 0;
 
-    public ThrowingScript tp; 
+    public ThrowingScript tp;
+
+    public int NumberOfCheeseToSatisfy = 1;
+
+
+    void CorrectCheese()
+    {
+        Happiness += 5;
+        Angriness -= 5;
+        Health += 20;
+        NumberOfCheeseToSatisfy -= 1;
+    }
+
+    public void RecieveCheese(Cheese type)
+    {
+        bool SatisfiedOne = false;
+        if (type.IntelliEffect != 0 && Intelligence != 0)
+        {
+            CorrectCheese();
+            SatisfiedOne = true;
+        }
+        else if (type.StrengthEffect != 0 && Strength != 0)
+        {
+            CorrectCheese();
+            SatisfiedOne = true;
+        }
+        else if (type.CharismaEffect != 0 && Charisma != 0)
+        {
+            CorrectCheese();
+            SatisfiedOne = true;
+        }
+        else if (type.SpeedEffect != 0 && SpeedCheese != 0)
+        {
+            CorrectCheese();
+            SatisfiedOne = true;
+        }
+
+        if(NumberOfCheeseToSatisfy<=0&& SatisfiedOne) //Go Home
+        {
+            SatDown = false;
+            CurrentState = new LeaveState();
+
+        }
+        else
+        { //ANGRY
+            Happiness -= 5;
+            Angriness += 5;
+        }    
+
+
+
+    }
 
 
     public void Start()
@@ -182,7 +232,6 @@ public class Punter : StateObject
 
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("SIFSAHJSAFjsaf");
         if(collider.gameObject.tag=="Exit")
         {
             Destroy(gameObject);
