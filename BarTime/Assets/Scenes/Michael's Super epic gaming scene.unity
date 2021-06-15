@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 32996309}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: ThrowObstruction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -342,18 +342,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: MaxChairs
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: minChairs
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: chairPrefab
-      value: 
-      objectReference: {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
     - target: {fileID: 9052055278437217410, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
       propertyPath: m_Name
       value: Table (4)
@@ -411,18 +399,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: MaxChairs
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: minChairs
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: chairPrefab
-      value: 
-      objectReference: {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
     - target: {fileID: 9052055278437217410, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
       propertyPath: m_Name
       value: Table (1)
@@ -480,18 +456,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: MaxChairs
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: minChairs
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: chairPrefab
-      value: 
-      objectReference: {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
     - target: {fileID: 9052055278437217410, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
       propertyPath: m_Name
       value: Table (3)
@@ -644,8 +608,8 @@ GameObject:
   - component: {fileID: 1376028920}
   - component: {fileID: 1376028919}
   m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Untagged
+  m_Name: Floor
+  m_TagString: ThrowObstruction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,18 +824,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: MaxChairs
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: minChairs
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: chairPrefab
-      value: 
-      objectReference: {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
     - target: {fileID: 9052055278437217410, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
       propertyPath: m_Name
       value: Table (2)
@@ -911,7 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yeetItem: 0
   itemPrefabList:
-  - {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
+  - {fileID: 1076028636094627190, guid: 69a83d2e53012da468e82f7215ec118e, type: 3}
   - {fileID: 6536926009706387203, guid: 138fc82212a1067409d3c7d91e8f8e8d, type: 3}
   - {fileID: 2432632690476805042, guid: 0405606fba36c24419544340405d8ba0, type: 3}
   minHeight: 0.8
@@ -1032,18 +984,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: MaxChairs
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: minChairs
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052055278437217409, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
-      propertyPath: chairPrefab
-      value: 
-      objectReference: {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
     - target: {fileID: 9052055278437217410, guid: 010a1ceffb618c6408cae25104ba6ec0, type: 3}
       propertyPath: m_Name
       value: Table

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 400326028027361305}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: ThrowObstruction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 9052055277496429425}
   m_Layer: 0
   m_Name: Legs Bit
-  m_TagString: Untagged
+  m_TagString: ThrowObstruction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 9052055278188682419}
   m_Layer: 0
   m_Name: Flat Bit
-  m_TagString: Untagged
+  m_TagString: ThrowObstruction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 9052055278437217409}
   m_Layer: 0
   m_Name: Table
-  m_TagString: Untagged
+  m_TagString: ThrowObstruction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,9 @@ MonoBehaviour:
   radius: 0.8
   rejiggyTables: 1
   useRandomNumber: 1
-  chairPrefab: {fileID: 3149662001235048859, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
+  minChairs: 3
+  MaxChairs: 9
+  chairPrefab: {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
   inhabitantList: []
   chairList:
   - {fileID: 0}

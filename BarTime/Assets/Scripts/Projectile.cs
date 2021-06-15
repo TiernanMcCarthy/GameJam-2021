@@ -50,5 +50,20 @@ public class Projectile : MonoBehaviour
 		{
 			shouldParabola = false;
 		}
+
+		if (collision.gameObject.CompareTag("ThrowObstruction"))
+		{
+			StartCoroutine(FuckingDie());
+		}
 	}
+
+
+	IEnumerator FuckingDie()
+	{
+			yield return new WaitForSeconds(2);
+
+			Destroy(gameObject);
+	}
+
+
 }
