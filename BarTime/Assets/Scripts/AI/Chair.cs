@@ -7,7 +7,7 @@ public class Chair : StateObject
 
     public bool Occupied;
 
-
+    public Table Owner;
 
     // Start is called before the first frame update
     void Start()

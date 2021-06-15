@@ -336,7 +336,7 @@ MonoBehaviour:
   useRandomNumber: 1
   minChairs: 3
   MaxChairs: 9
-  chairPrefab: {fileID: 1076028636094627190, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
+  chairPrefab: {fileID: 1473783162808809812, guid: 472be4ff3f2022544bd00c0f522c168c, type: 3}
   inhabitantList: []
   chairList:
   - {fileID: 0}
