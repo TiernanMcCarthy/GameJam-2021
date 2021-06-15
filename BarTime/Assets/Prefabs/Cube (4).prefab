@@ -166,7 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yeetItem: 0
-  itemPrefabList: []
+  itemPrefabList:
+  - {fileID: 1076028636094627190, guid: 69a83d2e53012da468e82f7215ec118e, type: 3}
+  - {fileID: 2432632690476805042, guid: 0405606fba36c24419544340405d8ba0, type: 3}
+  - {fileID: 6536926009706387203, guid: 138fc82212a1067409d3c7d91e8f8e8d, type: 3}
   minHeight: 0.8
   maxHeight: 2.5
   target: {fileID: 0}

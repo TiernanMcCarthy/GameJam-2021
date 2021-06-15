@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ThrowObstruction
+  - Exit
   layers:
   - Default
   - TransparentFX

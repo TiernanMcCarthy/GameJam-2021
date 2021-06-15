@@ -106,6 +106,7 @@ public class Punter : StateObject
                         Rig.isKinematic = true;
                         Target.GetComponent<Chair>().Occupied = true;
                         SatDown = true;
+                        SitIn = Target.GetComponent<Chair>();
                         Target = null;
                         CurrentState = new SittingState();
                     }
@@ -178,5 +179,16 @@ public class Punter : StateObject
 
     }
 
+
+    void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log("SIFSAHJSAFjsaf");
+        if(collider.gameObject.tag=="Exit")
+        {
+            Destroy(gameObject);
+
+        }
+
+    }
 
 }

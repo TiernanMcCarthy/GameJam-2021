@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SittingState : State
 {
-
+    
     public override void Execute(StateObject s)
     {
         
@@ -27,6 +27,10 @@ public class SittingState : State
 
         if (temp.Happiness == 0 || temp.Angriness==20)
         {
+            temp.SatDown = false;
+            temp.SitIn = null;
+            temp.CurrentState = new LeaveState();
+            //t
             //Leave lmao
         }
         // throw new System.NotImplementedException();
