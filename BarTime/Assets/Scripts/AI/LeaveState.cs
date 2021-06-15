@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LeaveState : State
 {
-
+    public float Multiplier = 2.5f;
     public override void Execute(StateObject s)
     {
         Punter temp = s.GetComponent<Punter>();
@@ -15,7 +15,8 @@ public class LeaveState : State
         temp.Rig.isKinematic = false;
         temp.CurrentState = new Move();
 
-
+        temp.SitIn.DropMoney(temp.Generosity * Multiplier);
+        temp.SitIn = null;
     }
 
 }

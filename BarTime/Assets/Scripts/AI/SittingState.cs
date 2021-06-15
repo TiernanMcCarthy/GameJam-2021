@@ -28,7 +28,6 @@ public class SittingState : State
         if (temp.Happiness == 0 || temp.Angriness==20)
         {
             temp.SatDown = false;
-            temp.SitIn = null;
             temp.CurrentState = new LeaveState();
             //t
             //Leave lmao

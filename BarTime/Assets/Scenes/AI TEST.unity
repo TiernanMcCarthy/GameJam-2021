@@ -1221,6 +1221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   punters: []
   Exit: {fileID: 1047306901}
+  TotalMoney: 0
 --- !u!1001 &575455433
 PrefabInstance:
   m_ObjectHideFlags: 0

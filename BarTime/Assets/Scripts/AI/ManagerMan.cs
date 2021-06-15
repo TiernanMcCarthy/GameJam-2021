@@ -9,4 +9,6 @@ public class ManagerMan : MonoBehaviour
 
     public Exit Exit;
 
+    public float TotalMoney;
+
 }
