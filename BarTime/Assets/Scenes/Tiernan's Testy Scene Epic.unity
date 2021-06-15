@@ -261,7 +261,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41314947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742749894a5f3ff41b337105b1c1e76c, type: 3}
   m_Name: 
@@ -274,12 +274,20 @@ MonoBehaviour:
   Health: 30
   Speed: 5
   Damage: 10
-  Intelligence: 5
-  Toxicity: 10
-  Empathy: 10
+  SatDown: 0
+  Happiness: 10
+  Angriness: 10
   Generosity: 10
+  Patience: 10
+  Intelligence: 5
+  Strength: 10
+  SpeedCheese: 10
+  Charisma: 10
   Hunger: 100
   Drunkenness: 100
+  TimeBetweenDecay: 3
+  ThrowInterval: 10
+  ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
   Target: {fileID: 0}
@@ -534,7 +542,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665513129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742749894a5f3ff41b337105b1c1e76c, type: 3}
   m_Name: 
@@ -547,12 +555,20 @@ MonoBehaviour:
   Health: 30
   Speed: 5
   Damage: 10
-  Intelligence: 5
-  Toxicity: 10
-  Empathy: 10
+  SatDown: 0
+  Happiness: 10
+  Angriness: 10
   Generosity: 10
+  Patience: 10
+  Intelligence: 5
+  Strength: 10
+  SpeedCheese: 10
+  Charisma: 10
   Hunger: 100
   Drunkenness: 100
+  TimeBetweenDecay: 3
+  ThrowInterval: 10
+  ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
   Target: {fileID: 0}
@@ -1034,7 +1050,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266612765}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742749894a5f3ff41b337105b1c1e76c, type: 3}
   m_Name: 
@@ -1047,12 +1063,20 @@ MonoBehaviour:
   Health: 30
   Speed: 5
   Damage: 10
-  Intelligence: 5
-  Toxicity: 10
-  Empathy: 10
+  SatDown: 0
+  Happiness: 10
+  Angriness: 10
   Generosity: 10
+  Patience: 10
+  Intelligence: 5
+  Strength: 10
+  SpeedCheese: 10
+  Charisma: 10
   Hunger: 100
   Drunkenness: 100
+  TimeBetweenDecay: 3
+  ThrowInterval: 10
+  ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
   Target: {fileID: 0}
@@ -1176,7 +1200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275867333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742749894a5f3ff41b337105b1c1e76c, type: 3}
   m_Name: 
@@ -1189,12 +1213,20 @@ MonoBehaviour:
   Health: 30
   Speed: 5
   Damage: 10
-  Intelligence: 5
-  Toxicity: 10
-  Empathy: 10
+  SatDown: 0
+  Happiness: 10
+  Angriness: 10
   Generosity: 10
+  Patience: 10
+  Intelligence: 5
+  Strength: 10
+  SpeedCheese: 10
+  Charisma: 10
   Hunger: 100
   Drunkenness: 100
+  TimeBetweenDecay: 3
+  ThrowInterval: 10
+  ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
   Target: {fileID: 0}
@@ -1609,12 +1641,20 @@ MonoBehaviour:
   Health: 30
   Speed: 5
   Damage: 10
-  Intelligence: 5
-  Toxicity: 10
-  Empathy: 10
+  SatDown: 0
+  Happiness: 10
+  Angriness: 10
   Generosity: 10
-  Hunger: 100
+  Patience: 10
+  Intelligence: 5
+  Strength: 10
+  SpeedCheese: 10
+  Charisma: 10
+  Hunger: 10
   Drunkenness: 100
+  TimeBetweenDecay: 0.4
+  ThrowInterval: 10
+  ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
   Target: {fileID: 0}
@@ -1898,7 +1938,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699495277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742749894a5f3ff41b337105b1c1e76c, type: 3}
   m_Name: 
@@ -1911,12 +1951,20 @@ MonoBehaviour:
   Health: 30
   Speed: 5
   Damage: 10
-  Intelligence: 5
-  Toxicity: 10
-  Empathy: 10
+  SatDown: 0
+  Happiness: 10
+  Angriness: 10
   Generosity: 10
+  Patience: 10
+  Intelligence: 5
+  Strength: 10
+  SpeedCheese: 10
+  Charisma: 10
   Hunger: 100
   Drunkenness: 100
+  TimeBetweenDecay: 3
+  ThrowInterval: 10
+  ThrowLiklihood: 0.6
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
   Target: {fileID: 0}

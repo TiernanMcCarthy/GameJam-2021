@@ -27,8 +27,8 @@ public class PopulateUI : MonoBehaviour
     void Update()
     {
         int_Text.text = thisPunter.Intelligence.ToString();
-        tox_Text.text = thisPunter.Toxicity.ToString();
-        emp_Text.text = thisPunter.Empathy.ToString();
+        //tox_Text.text = thisPunter.Toxicity.ToString();
+        //emp_Text.text = thisPunter.Empathy.ToString();
         gen_Text.text = thisPunter.Generosity.ToString();
     }
 

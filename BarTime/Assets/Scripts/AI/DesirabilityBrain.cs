@@ -42,6 +42,36 @@ public class DesirabilityBrain
         MainActor = Actor;
     }
 
+
+    public float ThrowBottleDesirability()
+    {
+        float Value = 0;
+
+        float Limiter = 0.04f;
+
+        Value += (MainActor.Angriness-10) * Limiter;
+
+        Value += (10-MainActor.Hunger) * Limiter;
+
+        Value += (10-MainActor.Happiness) * Limiter;
+
+        if(MainActor.TimeSinceThrowing()<MainActor.ThrowInterval)
+        {
+            Value = 0;
+        }
+
+        if (!MainActor.SatDown)
+        {
+            Value = 0;
+        }
+        MainActor.Damage = Value;
+        return Value;
+
+
+    }
+
+
+
     public float DistanceFromChair()
     {
         

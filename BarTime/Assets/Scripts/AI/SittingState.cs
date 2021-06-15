@@ -7,7 +7,19 @@ public class SittingState : State
 
     public override void Execute(StateObject s)
     {
-        Debug.Log("I AM GAMING");
-       // throw new System.NotImplementedException();
+        
+
+        Punter temp = s.GetComponent<Punter>();
+
+        DesirabilityBrain desirabilityBrain = new DesirabilityBrain(temp);
+
+        Debug.Log(desirabilityBrain.ThrowBottleDesirability());
+
+        if (desirabilityBrain.ThrowBottleDesirability() > temp.ThrowLiklihood)
+        {
+            Debug.Log("I AM THROWING A FUCKING BOTTLE");
+            temp.SetThrowTime();
+        }
+        // throw new System.NotImplementedException();
     }
 }

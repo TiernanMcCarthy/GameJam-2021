@@ -5,25 +5,49 @@ using UnityEngine;
 public class Punter : StateObject
 {
 
+    public static float BasicDecayAmount = 0.03f;
+
+
     [Header("Basic Attributes")]
     public float Health = 100;
     public float Speed = 5.0f;
     public float Damage = 10;
+    public bool SatDown = false;
 
 
     [Header("Personality")]
-    public float Intelligence = 5;
-    public float Toxicity = 10;
-    public float Empathy = 10;
+    public float Happiness = 10;
+    public float Angriness = 10;
     public float Generosity = 10;
+    public float Patience = 10;
+
+    [Header("Cheese Moods")]
+    public float Intelligence = 10;
+    public float Strength = 10;
+    public float SpeedCheese = 10;
+    public float Charisma = 10;
+
+
 
     [Header("Perishables")]
     public float Hunger = 100;
     public float Drunkenness = 100;
+    public float TimeBetweenDecay = 3.0f;
+    public float ThrowInterval = 10;
+    public float ThrowLiklihood = 0.6f;
 
     public Punter Victim;
 
     public Chair SitIn;
+    
+
+    //Local Variables
+    private float DecayTime;
+    private float ThrowTime = 0;
+
+
+
+
     public void Start()
     {
         BaseSpeed = Speed;
@@ -34,6 +58,16 @@ public class Punter : StateObject
 
     public StateObject Target;
 
+
+    public float TimeSinceThrowing()
+    {
+        return Time.time - ThrowTime;
+    }
+
+    public void SetThrowTime()
+    {
+        ThrowTime = Time.time;
+    }
 
     public void Update()
     {
@@ -48,6 +82,10 @@ public class Punter : StateObject
 
     public void FixedUpdate()
     {
+        SimulateFeelings();
+
+
+
         if (Target != null)
         {
             if (Target.GetComponent<Chair>())
@@ -63,6 +101,7 @@ public class Punter : StateObject
                     Rig.velocity = new Vector3(0, 0, 0);
                     Rig.isKinematic = true;
                     Target.GetComponent<Chair>().Occupied = true;
+                    SatDown = true;
                     Target = null;
                     CurrentState = new SittingState();
                 }
@@ -83,5 +122,39 @@ public class Punter : StateObject
 
         return false;
     }
+
+
+    private void SimulateFeelings()
+    {
+        //Natural Decay
+        if(Time.time-DecayTime>=TimeBetweenDecay)
+        {
+            Happiness -= BasicDecayAmount;
+            if (Happiness < 0)
+            {
+                Happiness = 0;
+            }
+            Angriness += BasicDecayAmount;
+            Patience -= BasicDecayAmount * 1.5f;
+            if (Patience < 0)
+            {
+                Patience = 0;
+            }
+
+            Hunger -= BasicDecayAmount;
+            if(Hunger<=0)
+            {
+                Debug.Log("I AM DEAD");
+            }
+
+
+            DecayTime = Time.time;
+        }
+
+
+
+    }
+
+
 
 }
