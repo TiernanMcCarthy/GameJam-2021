@@ -22,11 +22,13 @@ public class Punter : StateObject
     public float Drunkenness = 100;
 
     public Punter Victim;
+
+    public Chair SitIn;
     public void Start()
     {
         BaseSpeed = Speed;
         CurrentState = new Move();
-        Rig2D = GetComponent<Rigidbody2D>();
+        Rig = GetComponent<Rigidbody>();
     }
 
 
@@ -35,10 +37,41 @@ public class Punter : StateObject
 
     public void Update()
     {
+        Debug.Log(CurrentState);
         if (Active)
         {
             CurrentState.Execute(this);
         }
+
+
+    }
+
+    public void FixedUpdate()
+    {
+        if (Target != null)
+        {
+            if (Target.GetComponent<Chair>())
+            {
+                if (Target.GetComponent<Chair>().Occupied)
+                {
+                    CurrentState = new Evaluate();
+                }
+                Debug.Log("WHNSAFHSAFHSAF");
+                if (Vector3.Distance(transform.position, Target.transform.position) <= 2.0f)
+                {
+                    transform.position = Target.transform.position + Vector3.up * 2;
+                    Rig.velocity = new Vector3(0, 0, 0);
+                    Rig.isKinematic = true;
+                    Target.GetComponent<Chair>().Occupied = true;
+                    Target = null;
+                    CurrentState = new SittingState();
+                }
+            }
+
+            
+
+        }
+
     }
 
     public override bool Move()
