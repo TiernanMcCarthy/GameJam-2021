@@ -30,7 +30,7 @@ public class ManagerMan : MonoBehaviour
 
 
 
-    private void RandomisePunter(Punter Edit)
+    private void RandomisePunter(ref Punter Edit)
     {
         //Happiness
         Edit.Happiness += Random.Range(-2, 2);
@@ -45,24 +45,48 @@ public class ManagerMan : MonoBehaviour
 
 
 
+        int MaxCheese = Random.Range(1, 3);
 
         int CheeseEffects = 0;
 
+        Edit.Charisma = 2;
 
-        if(Random.Range(0,1)==1)
+        if(Random.Range(0,2)==1 && CheeseEffects<MaxCheese)
         {
             Edit.Intelligence = 2;
+            Edit.Charisma = 0;
+            CheeseEffects += 1;
+
+        }
+
+        if(Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
+        {
+            Edit.Strength = 2;
+            Edit.Charisma = 0;
+            CheeseEffects += 1;
+        }
+
+        if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
+        {
+            Edit.Speed = 2;
+            Edit.Charisma = 0;
+            CheeseEffects += 1;
+        }
+
+        if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
+        {
+            Edit.Charisma = 2;
         }
 
         //Cheese Moods
         //Intelligence + 2
-        
+
         //Strength  +2
         //Speed Cheese
         // Charisfma
 
 
-
+        
 
 
 
@@ -85,7 +109,7 @@ public class ManagerMan : MonoBehaviour
         }
 
         Temp.MoveToLocation = Spawns[0].position; //Address
-
+        RandomisePunter(ref Temp);
         punters.Add(Temp);
 
 
@@ -94,9 +118,6 @@ public class ManagerMan : MonoBehaviour
 
     private void SpawnPunters(int Remainder)
     {
-
-
-       
         for(int i=NumberOfPunters; i<MaximumPunters; i++)
         {
             Remainder -= 1;
@@ -104,7 +125,7 @@ public class ManagerMan : MonoBehaviour
             NumberOfPunters++;
             if (Remainder == 0) //Stop spawning them
             {
-                break;
+                i = 999;
             }
         }
 
@@ -117,7 +138,7 @@ public class ManagerMan : MonoBehaviour
         if(NumberOfPunters<MaximumPunters && Time.time-LastWaveTime>=TimeBetweenWaves) //If there is room to spawn punters
         {
 
-            SpawnPunters(MaximumPunters - NumberOfPunters);
+            SpawnPunters(WaveSize);
             LastWaveTime = Time.time;
 
         }

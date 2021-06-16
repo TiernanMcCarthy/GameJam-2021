@@ -112,10 +112,10 @@ MonoBehaviour:
   Angriness: 10
   Generosity: 10
   Patience: 10
-  Intelligence: 5
-  Strength: 10
-  SpeedCheese: 10
-  Charisma: 10
+  Intelligence: 0
+  Strength: 0
+  SpeedCheese: 0
+  Charisma: 0
   Hunger: 10
   Drunkenness: 100
   TimeBetweenDecay: 0.4
