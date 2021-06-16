@@ -33,10 +33,11 @@ public class Projectile : MonoBehaviour
 
 	public void Update()
 	{
-		if (shouldParabola)
+		if (shouldParabola && target!=null)
 		{
 			time += Time.deltaTime;
 			time %= 5f;
+			
 			transform.position = ParabolaMath.Parabola(startingPos, target.transform.position, height, time / speedMultiplier);
 
 			transform.Rotate(new Vector3(x, y, z) * rotationMultiplier * Time.deltaTime);
@@ -55,6 +56,13 @@ public class Projectile : MonoBehaviour
 		{
 			StartCoroutine(FuckingDie());
 		}
+
+		if(collision.gameObject==target && target.GetComponent<Punter>())
+        {
+			Punter temp = target.GetComponent<Punter>();
+			temp.Health -= 10;
+			Destroy(gameObject);
+        }
 	}
 
 

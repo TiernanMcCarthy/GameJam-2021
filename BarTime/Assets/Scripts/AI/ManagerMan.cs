@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro; 
 public class ManagerMan : MonoBehaviour
 {
     public List<Punter> punters;
@@ -29,7 +29,13 @@ public class ManagerMan : MonoBehaviour
     public List<Transform> MoveToLocations;
 
 
+    public TMPro.TextMeshProUGUI TimeGaming;
 
+    public TMPro.TextMeshProUGUI MoneyGaming;
+
+    public float StartTime = 0;
+
+    public float RunTime = 300;
     private void RandomisePunter(ref Punter Edit)
     {
         //Happiness
@@ -51,7 +57,7 @@ public class ManagerMan : MonoBehaviour
 
         Edit.Charisma = 2;
 
-        if(Random.Range(0,2)==1 && CheeseEffects<MaxCheese)
+        if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
             Edit.Intelligence = 2;
             Edit.Charisma = 0;
@@ -59,7 +65,7 @@ public class ManagerMan : MonoBehaviour
 
         }
 
-        if(Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
+        if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
             Edit.Strength = 2;
             Edit.Charisma = 0;
@@ -86,7 +92,7 @@ public class ManagerMan : MonoBehaviour
         // Charisfma
 
 
-        
+
 
 
 
@@ -95,11 +101,11 @@ public class ManagerMan : MonoBehaviour
 
     private void SpawnPrefab()
     {
-        Punter Temp = Instantiate(Prefab, Spawns[Random.Range(0, Spawns.Count)].position,Quaternion.identity);
+        Punter Temp = Instantiate(Prefab, Spawns[Random.Range(0, Spawns.Count)].position, Quaternion.identity);
 
         int Case = Random.Range(0, 2);
 
-        if(Case==0)
+        if (Case == 0)
         {
             Temp.Team = false;
         }
@@ -118,7 +124,7 @@ public class ManagerMan : MonoBehaviour
 
     private void SpawnPunters(int Remainder)
     {
-        for(int i=NumberOfPunters; i<MaximumPunters; i++)
+        for (int i = NumberOfPunters; i < MaximumPunters; i++)
         {
             Remainder -= 1;
             SpawnPrefab();
@@ -135,7 +141,7 @@ public class ManagerMan : MonoBehaviour
 
     private void CheckStateOfPunters()
     {
-        if(NumberOfPunters<MaximumPunters && Time.time-LastWaveTime>=TimeBetweenWaves) //If there is room to spawn punters
+        if (NumberOfPunters < MaximumPunters && Time.time - LastWaveTime >= TimeBetweenWaves) //If there is room to spawn punters
         {
 
             SpawnPunters(WaveSize);
@@ -150,7 +156,7 @@ public class ManagerMan : MonoBehaviour
         punters = new List<Punter>();
         Punter[] temp = FindObjectsOfType<Punter>();
 
-        foreach(Punter p in temp)
+        foreach (Punter p in temp)
         {
             punters.Add(p);
         }
@@ -160,16 +166,24 @@ public class ManagerMan : MonoBehaviour
     public void Start()
     {
         SpawnPrefab();
+        StartTime = Time.time;
     }
 
     public void FixedUpdate()
     {
         CheckPuntersList();
         CheckStateOfPunters();
-        if(Input.GetKeyDown("a"))
+        if (Input.GetKeyDown("a"))
         {
             //SpawnPrefab();
         }
+
+        MoneyGaming.text =TotalMoney.ToString();
+        TimeGaming.text = "Remaining: "+(RunTime-(Time.time - StartTime)).ToString();
+
     }
+
+    
+    //MoneyGaming
 
 }

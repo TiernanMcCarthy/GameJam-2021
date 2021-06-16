@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4359569224893681991}
   - component: {fileID: 1192921570922167997}
   - component: {fileID: 5755887736838847063}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: LongNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
