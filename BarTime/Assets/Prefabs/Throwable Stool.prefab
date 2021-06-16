@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7614012833345205139}
   - component: {fileID: 5791418835207113606}
   - component: {fileID: 5983729136321497125}
-  m_Layer: 0
-  m_Name: Stool
+  m_Layer: 4
+  m_Name: Throwable Stool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

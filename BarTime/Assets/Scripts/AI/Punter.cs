@@ -131,6 +131,12 @@ public class Punter : StateObject
         }
 
 
+        if(Health<=0)
+        {
+            SitIn.Occupied = false;
+            Destroy(gameObject);
+        }
+
     }
 
     public void FixedUpdate()

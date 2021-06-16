@@ -18,7 +18,6 @@ public class SittingState : State
         if (desirabilityBrain.ThrowBottleDesirability() > temp.ThrowLiklihood)
         {
             temp.FindTarget();
-            Debug.Log("I AM THROWING A FUCKING BOTTLE");
             temp.tp.target = temp.Victim.gameObject;
             temp.tp.yeetItem = true;
             temp.SetThrowTime();

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4234103809148766823}
   - component: {fileID: -5288114073994800777}
   - component: {fileID: 8926817686384114582}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: CricketBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
