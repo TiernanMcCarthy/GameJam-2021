@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cheese : MonoBehaviour
 {
+
     public float IntelliEffect = 0;
     public float StrengthEffect = 0;
     public float SpeedEffect = 0;

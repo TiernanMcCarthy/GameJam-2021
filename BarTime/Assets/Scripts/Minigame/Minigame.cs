@@ -133,7 +133,7 @@ public class Minigame : MonoBehaviour
             }
       
         }
-        PlayGame();
+        //PlayGame();
        
     }
 
