@@ -10,12 +10,12 @@ public class PopulateUI : MonoBehaviour
 
     public GameObject canvas;
     bool isOn = false; //equal to whether this canvas is visible or not
-    [SerializeField] Button button;
-    [Header("Text Fields")]
-    [SerializeField] TMP_Text int_Text;
-    [SerializeField] TMP_Text tox_Text;
-    [SerializeField] TMP_Text emp_Text;
-    [SerializeField] TMP_Text gen_Text;
+    [Header("Sliders")]
+    [SerializeField] Slider strSlider;
+    [SerializeField] Slider spdSlider;
+    [SerializeField] Slider intSlider;
+    [SerializeField] Slider chrSlider;
+
 
 
     void Start()
@@ -26,10 +26,10 @@ public class PopulateUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //int_Text.text = thisPunter.Intelligence.ToString();
-        //tox_Text.text = thisPunter.Toxicity.ToString();
-        //emp_Text.text = thisPunter.Empathy.ToString();
-        //gen_Text.text = thisPunter.Generosity.ToString();
+        strSlider.value = thisPunter.Strength;
+        spdSlider.value = thisPunter.Speed;
+        intSlider.value = thisPunter.Intelligence;
+        chrSlider.value = thisPunter.Charisma;
     }
 
     public void HideUI()

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Minigame : MonoBehaviour
 {
     //will be referenced as a variable for each cheese stack
+    //NEED TO MAKE A "CAN PLAY" VARIABLE SO THAT THE PLAYER CAN'T KEEP PLAYING AFTER FAILING
+    //ALSO NEED TO RESET THE ARROWS TO BEING A WHITE COLOUR AS IT CURRENTLY STAYS GREEN
     public List<KeyCode> KeySequence;
 
     [SerializeField]GameObject canvas;
@@ -21,6 +23,7 @@ public class Minigame : MonoBehaviour
     [SerializeField]Image[] Ui_Images;
     [SerializeField] TMPro.TextMeshProUGUI TimerText;
     bool isPlaying = false;
+    bool canPlay = true;
     int currentArrow = 0;
     void Start()
     {
@@ -61,28 +64,36 @@ public class Minigame : MonoBehaviour
 
     public void PlayGame()
     {
-        for(int i = 0; i < 5; i++)
+        if(canPlay)
         {
-            switch(KeySequence[i])
+            for (int i = 0; i < 5; i++)
             {
-                case KeyCode.LeftArrow:
-                    Ui_Images[i].sprite = Sprite_LEFT;
-                    break;
-                case KeyCode.RightArrow:
-                    Ui_Images[i].sprite = Sprite_RIGHT;
-                    break;
-                case KeyCode.UpArrow:
-                    Ui_Images[i].sprite = Sprite_UP;
-                    break;
-                case KeyCode.DownArrow:
-                    Ui_Images[i].sprite = Sprite_DOWN;
-                    break;
+                switch (KeySequence[i])
+                {
+                    case KeyCode.LeftArrow:
+                        Ui_Images[i].sprite = Sprite_LEFT;
+                        Ui_Images[i].color = Color.white;
+                        break;
+                    case KeyCode.RightArrow:
+                        Ui_Images[i].sprite = Sprite_RIGHT;
+                        Ui_Images[i].color = Color.white;
+                        break;
+                    case KeyCode.UpArrow:
+                        Ui_Images[i].sprite = Sprite_UP;
+                        Ui_Images[i].color = Color.white;
+                        break;
+                    case KeyCode.DownArrow:
+                        Ui_Images[i].sprite = Sprite_DOWN;
+                        Ui_Images[i].color = Color.white;
+                        break;
+                }
             }
+            canvas.SetActive(true);
+            currentArrow = 0;
+            isPlaying = true;
+            StartCoroutine(GameCountdown());
         }
-        canvas.SetActive(true);
-        currentArrow = 0;
-        isPlaying = true;
-        StartCoroutine(GameCountdown());
+
     }
     void GeneratePattern()
     {
@@ -173,18 +184,23 @@ public class Minigame : MonoBehaviour
 
     IEnumerator WaitToStockCheese()
     {
+        canPlay = false;
         yield return new WaitForSeconds(1);
         canvas.SetActive(false);
         TimerText.text = "3";
         yield return new WaitForSeconds(7);
         thisStack.RestockCheese();
+        canPlay = true;
+       
     }
     IEnumerator WonGame()
     {
+        canPlay = false;
         Debug.Log("cheese");
         thisStack.RestockCheese();
         yield return new WaitForSeconds(1);
         canvas.SetActive(false);
+        canPlay = true;
         TimerText.text = "3";
     }
 }
