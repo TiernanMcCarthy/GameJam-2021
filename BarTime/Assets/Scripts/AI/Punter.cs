@@ -104,6 +104,8 @@ public class Punter : StateObject
         CurrentState = new Move();
         Rig = GetComponent<Rigidbody>();
         tp = GetComponent<ThrowingScript>();
+
+        
     }
 
 

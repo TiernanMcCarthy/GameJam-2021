@@ -9,7 +9,7 @@ public class PopulateUI : MonoBehaviour
     Punter thisPunter;
 
     public GameObject canvas;
-    bool isOn = true; //equal to whether this canvas is visible or not
+    bool isOn = false; //equal to whether this canvas is visible or not
     [SerializeField] Button button;
     [Header("Text Fields")]
     [SerializeField] TMP_Text int_Text;
@@ -38,11 +38,11 @@ public class PopulateUI : MonoBehaviour
         canvas.SetActive(isOn);
         if(isOn)
         {
-            button.GetComponent<RectTransform>().localPosition = new Vector3(0.7f, 2.3f, 0);
+           // button.GetComponent<RectTransform>().localPosition = new Vector3(0.7f, 2.3f, 0);
         }
         else
         {
-            button.GetComponent<RectTransform>().localPosition = new Vector3(0.7f, -2, 0);
+            //button.GetComponent<RectTransform>().localPosition = new Vector3(0.7f, -2, 0);
         }
     }
 }
