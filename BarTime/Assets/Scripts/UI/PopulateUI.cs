@@ -26,10 +26,10 @@ public class PopulateUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int_Text.text = thisPunter.Intelligence.ToString();
+        //int_Text.text = thisPunter.Intelligence.ToString();
         //tox_Text.text = thisPunter.Toxicity.ToString();
         //emp_Text.text = thisPunter.Empathy.ToString();
-        gen_Text.text = thisPunter.Generosity.ToString();
+        //gen_Text.text = thisPunter.Generosity.ToString();
     }
 
     public void HideUI()
