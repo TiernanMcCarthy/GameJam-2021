@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 535946256231726987}
   - component: {fileID: 535946256231726996}
   - component: {fileID: 5961392284963533369}
+  - component: {fileID: -5420921007043030066}
   m_Layer: 6
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -149,7 +150,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
@@ -176,3 +177,16 @@ MonoBehaviour:
   maxHeight: 2.5
   target: {fileID: 0}
   rotationSpeed: 15
+--- !u!114 &-5420921007043030066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535946256231726985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163f7be90f9da5d4caaabb791e851d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStaticBillBoard: 0

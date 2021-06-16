@@ -32,6 +32,39 @@ public class ManagerMan : MonoBehaviour
 
     private void RandomisePunter(Punter Edit)
     {
+        //Happiness
+        Edit.Happiness += Random.Range(-2, 2);
+        //Angriness
+        Edit.Angriness += Random.Range(-2, 4);
+        //Generosity
+        Edit.Generosity += Random.Range(-5, 5);
+        //Patience
+        Edit.Patience += Random.Range(-2, 2);
+        //Hunger
+        Edit.Hunger += Random.Range(-2, 2.1f);
+
+
+
+
+        int CheeseEffects = 0;
+
+
+        if(Random.Range(0,1)==1)
+        {
+            Edit.Intelligence = 2;
+        }
+
+        //Cheese Moods
+        //Intelligence + 2
+        
+        //Strength  +2
+        //Speed Cheese
+        // Charisfma
+
+
+
+
+
 
     }
 
@@ -64,8 +97,6 @@ public class ManagerMan : MonoBehaviour
 
 
        
-
-
         for(int i=NumberOfPunters; i<MaximumPunters; i++)
         {
             Remainder -= 1;
@@ -113,9 +144,10 @@ public class ManagerMan : MonoBehaviour
     public void FixedUpdate()
     {
         CheckPuntersList();
+        CheckStateOfPunters();
         if(Input.GetKeyDown("a"))
         {
-            SpawnPrefab();
+            //SpawnPrefab();
         }
     }
 

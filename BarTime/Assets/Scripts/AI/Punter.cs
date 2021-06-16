@@ -49,7 +49,6 @@ public class Punter : StateObject
 
     public int NumberOfCheeseToSatisfy = 1;
 
-
     void CorrectCheese()
     {
         Happiness += 5;

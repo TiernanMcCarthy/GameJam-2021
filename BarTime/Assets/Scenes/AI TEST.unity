@@ -1421,7 +1421,7 @@ MonoBehaviour:
   Exit: {fileID: 1047306901}
   TotalMoney: 0
   Prefab: {fileID: 535946256231726986, guid: 365b46ba62b2f5946882346ffdc07987, type: 3}
-  MaximumPunters: 20
+  MaximumPunters: 35
   WaveSize: 5
   TimeBetweenWaves: 15
   Spawns:
@@ -3264,6 +3264,7 @@ GameObject:
   - component: {fileID: 871938557364995541}
   - component: {fileID: 871938557364995540}
   - component: {fileID: 871938557364995542}
+  - component: {fileID: 871938557364995543}
   m_Layer: 0
   m_Name: MattMoment
   m_TagString: Player
@@ -3317,6 +3318,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &871938557364995543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871938557364995539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163f7be90f9da5d4caaabb791e851d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStaticBillBoard: 1
 --- !u!1001 &3117010724130064544
 PrefabInstance:
   m_ObjectHideFlags: 0
