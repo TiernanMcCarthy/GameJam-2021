@@ -29,7 +29,7 @@ public class CheeseStack : MonoBehaviour
     {
         if(remainingCheese > 0)
         {
-            ModelStack[remainingCheese - 1].SetActive(false);
+           // ModelStack[remainingCheese - 1].SetActive(false);
             remainingCheese--;
             Cheese temp = Instantiate(thisCheese);
             player.CurrentCheese = temp;
@@ -44,7 +44,7 @@ public class CheeseStack : MonoBehaviour
         remainingCheese = 4;
         for(int i = 0; i < 4; i++)
         {
-            ModelStack[i].SetActive(true);
+            //ModelStack[i].SetActive(true);
         }
     }
 

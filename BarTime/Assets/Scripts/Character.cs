@@ -164,8 +164,8 @@ public class Character : MonoBehaviour
                     }
                     // SetVehicle(hitList[ClosestPositions[0].Index].gameObject); //set the target vehicle
                     //MainActor.Target = ClosestPositions[0].Sample;
-                   // return Vector3.Distance(ClosestPositions[0].Sample.transform.position, MainActor.transform.position);
-                   //ClosestPositions[0].Sample
+                    // return Vector3.Distance(ClosestPositions[0].Sample.transform.position, MainActor.transform.position);
+                    ClosestPositions[0].Sample.GiveCheese();
                 }
 
             }
