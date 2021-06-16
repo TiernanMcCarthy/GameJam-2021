@@ -55,33 +55,50 @@ public class ManagerMan : MonoBehaviour
 
         int CheeseEffects = 0;
 
-        Edit.Charisma = 2;
+        Edit.Charisma = 10;
+        Edit.Intelligence = 10;
+        Edit.Strength = 10;
+        Edit.Speed = 10;
 
         if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
-            Edit.Intelligence = 2;
-            Edit.Charisma = 0;
+            Edit.Intelligence = Random.Range(1, 5);
+
+            Edit.Charisma = 10;
+            Edit.Strength = 10;
+            Edit.Speed = 10;
+
             CheeseEffects += 1;
 
         }
 
         if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
-            Edit.Strength = 2;
-            Edit.Charisma = 0;
+            Edit.Strength = Random.Range(1, 5);
+            Edit.Charisma = 10;
+            Edit.Intelligence = 10;
+            Edit.Speed = 10;
+
             CheeseEffects += 1;
         }
 
         if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
-            Edit.Speed = 2;
-            Edit.Charisma = 0;
+            Edit.Speed = Random.Range(1, 5);
+
+            Edit.Charisma = 10;
+            Edit.Intelligence = 10;
+            Edit.Strength = 10;
+
             CheeseEffects += 1;
         }
 
         if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
-            Edit.Charisma = 2;
+            Edit.Charisma = Random.Range(1, 5);
+            Edit.Speed = 10;
+            Edit.Intelligence = 10;
+            Edit.Strength = 10;
         }
 
         //Cheese Moods

@@ -49,37 +49,64 @@ public class Punter : StateObject
 
     public int NumberOfCheeseToSatisfy = 1;
 
-    void CorrectCheese()
+    void CorrectCheese(Cheese Type)
     {
         Happiness += 5;
         Angriness -= 5;
         Health += 20;
         NumberOfCheeseToSatisfy -= 1;
+
+        if(Type.StrengthEffect!=0)
+        {
+            Strength = 10;
+        }
+        else if (Type.SpeedEffect != 0)
+        {
+            Speed = 10;
+        }
+        else if (Type.IntelliEffect != 0)
+        {
+            Intelligence = 10;
+        }
+        else if (Type.CharismaEffect != 0)
+        {
+            Charisma = 10;
+        }
+
+
+
+
+       // Strength += Type.StrengthEffect;
+       // Speed += Type.SpeedEffect;
+       // Intelligence += Type.IntelliEffect;
+        //Charisma += Type.CharismaEffect;
     }
 
     public void RecieveCheese(Cheese type)
     {
         bool SatisfiedOne = false;
-        if (type.IntelliEffect != 0 && Intelligence != 0)
+        if (type.IntelliEffect != 0 && Intelligence != 10)
         {
-            CorrectCheese();
+            CorrectCheese(type);
             SatisfiedOne = true;
         }
-        else if (type.StrengthEffect != 0 && Strength != 0)
+        else if (type.StrengthEffect != 0 && Strength != 10)
         {
-            CorrectCheese();
+            CorrectCheese(type);
             SatisfiedOne = true;
         }
-        else if (type.CharismaEffect != 0 && Charisma != 0)
+        else if (type.CharismaEffect != 0 && Charisma != 10)
         {
-            CorrectCheese();
+            CorrectCheese(type);
             SatisfiedOne = true;
         }
-        else if (type.SpeedEffect != 0 && SpeedCheese != 0)
+        else if (type.SpeedEffect != 0 && SpeedCheese != 10)
         {
-            CorrectCheese();
+            CorrectCheese(type);
             SatisfiedOne = true;
         }
+
+        
 
         if(NumberOfCheeseToSatisfy<=0&& SatisfiedOne) //Go Home
         {
