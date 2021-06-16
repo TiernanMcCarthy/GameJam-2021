@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 535946256231726987}
   - component: {fileID: 535946256231726996}
   - component: {fileID: 5961392284963533369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 535946256231726985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.1100001, y: 3.14, z: -6.09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   Victim: {fileID: 0}
   SitIn: {fileID: 0}
   tp: {fileID: 0}
+  NumberOfCheeseToSatisfy: 1
   Target: {fileID: 0}
 --- !u!65 &535946256231726987
 BoxCollider:
@@ -170,6 +171,7 @@ MonoBehaviour:
   - {fileID: 1076028636094627190, guid: 69a83d2e53012da468e82f7215ec118e, type: 3}
   - {fileID: 2432632690476805042, guid: 0405606fba36c24419544340405d8ba0, type: 3}
   - {fileID: 6536926009706387203, guid: 138fc82212a1067409d3c7d91e8f8e8d, type: 3}
+  - {fileID: 2846470044482597010, guid: 6c36968faf67c074e9e7db743b416c82, type: 3}
   minHeight: 0.8
   maxHeight: 2.5
   target: {fileID: 0}
