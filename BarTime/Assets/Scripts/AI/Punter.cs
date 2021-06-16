@@ -62,7 +62,7 @@ public class Punter : StateObject
         }
         else if (Type.SpeedEffect != 0)
         {
-            Speed = 10;
+            SpeedCheese = 10;
         }
         else if (Type.IntelliEffect != 0)
         {
@@ -87,21 +87,25 @@ public class Punter : StateObject
         bool SatisfiedOne = false;
         if (type.IntelliEffect != 0 && Intelligence != 10)
         {
+            Debug.Log("wow, i loved eating that intelligence cheese!");
             CorrectCheese(type);
             SatisfiedOne = true;
         }
         else if (type.StrengthEffect != 0 && Strength != 10)
         {
+            Debug.Log("wow, i loved eating that strength cheese!");
             CorrectCheese(type);
             SatisfiedOne = true;
         }
         else if (type.CharismaEffect != 0 && Charisma != 10)
         {
+            Debug.Log("wow, i loved eating that charisma cheese!");
             CorrectCheese(type);
             SatisfiedOne = true;
         }
         else if (type.SpeedEffect != 0 && SpeedCheese != 10)
         {
+            Debug.Log("wow, i loved eating that speed cheese!");
             CorrectCheese(type);
             SatisfiedOne = true;
         }
@@ -183,7 +187,7 @@ public class Punter : StateObject
                 }
                 else
                 {
-                    if (Vector3.Distance(transform.position, Target.transform.position) <= 2.0f)
+                    if (Vector3.Distance(transform.position, Target.transform.position) <= 0.5f)
                     {
                         transform.position = Target.transform.position + Vector3.up * 0.3f;
                         Rig.velocity = new Vector3(0, 0, 0);

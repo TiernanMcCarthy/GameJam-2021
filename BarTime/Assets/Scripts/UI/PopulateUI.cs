@@ -27,7 +27,7 @@ public class PopulateUI : MonoBehaviour
     void Update()
     {
         strSlider.value = thisPunter.Strength;
-        spdSlider.value = thisPunter.Speed;
+        spdSlider.value = thisPunter.SpeedCheese;
         intSlider.value = thisPunter.Intelligence;
         chrSlider.value = thisPunter.Charisma;
     }

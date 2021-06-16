@@ -58,7 +58,7 @@ public class ManagerMan : MonoBehaviour
         Edit.Charisma = 10;
         Edit.Intelligence = 10;
         Edit.Strength = 10;
-        Edit.Speed = 10;
+        Edit.SpeedCheese = 10;
 
         if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
@@ -66,7 +66,7 @@ public class ManagerMan : MonoBehaviour
 
             Edit.Charisma = 10;
             Edit.Strength = 10;
-            Edit.Speed = 10;
+            Edit.SpeedCheese = 10;
 
             CheeseEffects += 1;
 
@@ -77,14 +77,14 @@ public class ManagerMan : MonoBehaviour
             Edit.Strength = Random.Range(1, 5);
             Edit.Charisma = 10;
             Edit.Intelligence = 10;
-            Edit.Speed = 10;
+            Edit.SpeedCheese = 10;
 
             CheeseEffects += 1;
         }
 
         if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
-            Edit.Speed = Random.Range(1, 5);
+            Edit.SpeedCheese = Random.Range(1, 5);
 
             Edit.Charisma = 10;
             Edit.Intelligence = 10;
@@ -96,7 +96,7 @@ public class ManagerMan : MonoBehaviour
         if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
             Edit.Charisma = Random.Range(1, 5);
-            Edit.Speed = 10;
+            Edit.SpeedCheese = 10;
             Edit.Intelligence = 10;
             Edit.Strength = 10;
         }

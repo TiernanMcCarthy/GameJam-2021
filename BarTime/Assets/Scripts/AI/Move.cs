@@ -12,7 +12,7 @@ public class Move : State
             if (s.Move())
             {
                 Vector3 temp =  s.MoveToLocation- s.transform.position;
-                s.Rig.velocity = temp.normalized * s.BaseSpeed;
+                s.Rig.velocity = temp.normalized * s.GetComponent<Punter>().Speed;
 
 
             }

@@ -14,7 +14,7 @@ public class CheeseStack : MonoBehaviour
     [SerializeField] GameObject[] ModelStack;
     void Start()
     {
-        SetCheeseType();
+        //SetCheeseType();
         thisGame = GetComponent<Minigame>();
         RestockCheese();
     }
@@ -53,16 +53,16 @@ public class CheeseStack : MonoBehaviour
         switch(cheeseDecider)
         {
             case 0:
-                thisCheese.StrengthEffect = 2;
+                //thisCheese.StrengthEffect = 2;
                 break;
             case 1:
-                thisCheese.SpeedEffect = 2;
+                //thisCheese.SpeedEffect = 2;
                 break;
             case 2:
-                thisCheese.IntelliEffect = 2;
+                //thisCheese.IntelliEffect = 2;
                 break;
             case 3:
-                thisCheese.CharismaEffect = 2;
+                //thisCheese.CharismaEffect = 2;
                 break;
 
         }

@@ -16,11 +16,6 @@ public class CrazyAssRedBars : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-    }
-
-    public void OnValueChanged()
-    {
         if (thisSlider.value < thisSlider.maxValue)
         {
             fillImage.color = Color.red;
@@ -29,5 +24,18 @@ public class CrazyAssRedBars : MonoBehaviour
         {
             fillImage.color = Color.green;
         }
+    }
+
+    public void OnValueChanged()
+    {
+        //Debug.Log("haha lol XD");
+        //if (thisSlider.value < thisSlider.maxValue)
+        //{
+        //    fillImage.color = Color.red;
+        //}
+        //else
+        //{
+        //    fillImage.color = Color.green;
+        //}
     }
 }
