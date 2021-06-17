@@ -29,7 +29,7 @@ public class ThrowingScript : MonoBehaviour
 
 			var projectileScript = itemToYeet.AddComponent<Projectile>();
 
-			projectileScript.startingPos = transform.position;
+			projectileScript.startingPos = transform.position+Vector3.up*1;
 
 			projectileScript.height = Random.Range(minHeight, maxHeight);
 			projectileScript.target = target;
