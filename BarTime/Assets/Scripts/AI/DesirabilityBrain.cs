@@ -82,10 +82,14 @@ public class DesirabilityBrain
         {
             if (hitList[i].gameObject != MainActor.gameObject && hitList[i].gameObject.GetComponent<Chair>())
             {
-                 if (MainActor != null)
-                 {
+                if (MainActor != null)
+                {
                     //Debug.Log("GISAihjsafhjsafhjsafhsaf");
-
+                    if (hitList[i].gameObject.GetComponent<Chair>().Owner==null)
+                    {
+                        Debug.Log("SFhsafbhsfgahbsafhj");
+                    }
+                
                     if (hitList[i].gameObject.GetComponent<Chair>().Occupied == false && hitList[i].gameObject.GetComponent<Chair>().Owner.Team == MainActor.Team)
                     {
                         Dist Close = new Dist(i, hitList[i].gameObject.GetComponentInParent<Chair>());
