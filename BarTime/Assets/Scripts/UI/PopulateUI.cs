@@ -16,7 +16,11 @@ public class PopulateUI : MonoBehaviour
     [SerializeField] Slider intSlider;
     [SerializeField] Slider chrSlider;
 
+    [SerializeField] Image happinessFace;
+    [SerializeField] Image generosityFace;
 
+    [SerializeField] Sprite[] happySprites;
+    [SerializeField] Sprite[] genSprites;
 
     void Start()
     {
@@ -32,6 +36,34 @@ public class PopulateUI : MonoBehaviour
         chrSlider.value = thisPunter.Charisma;
     }
 
+    private void FixedUpdate()
+    {
+        if(thisPunter.Happiness < 5)
+        {
+            happinessFace.sprite = happySprites[0];
+        }
+        else if (thisPunter.Happiness > 4 && thisPunter.Happiness < 9)
+        {
+            happinessFace.sprite = happySprites[1];
+        }
+        else
+        {
+            happinessFace.sprite = happySprites[2];
+        }
+
+        if (thisPunter.Generosity < 9)
+        {
+            generosityFace.sprite = genSprites[0];
+        }
+        else if (thisPunter.Happiness > 8 && thisPunter.Happiness < 13)
+        {
+            generosityFace.sprite = genSprites[1];
+        }
+        else
+        {
+            generosityFace.sprite = genSprites[2];
+        }
+    }
     public void HideUI()
     {
         isOn = !isOn;
