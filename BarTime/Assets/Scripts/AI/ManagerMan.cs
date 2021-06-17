@@ -63,6 +63,8 @@ public class ManagerMan : MonoBehaviour
         Edit.Strength = 10;
         Edit.SpeedCheese = 10;
 
+        Edit.temp = this;
+
         if (Random.Range(0, 2) == 1 && CheeseEffects < MaxCheese)
         {
             Edit.Intelligence = Random.Range(1, 5);

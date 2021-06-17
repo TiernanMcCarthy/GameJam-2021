@@ -53,6 +53,9 @@ public class Punter : StateObject
 
     public int NumberOfCheeseToSatisfy = 1;
 
+
+    public ManagerMan temp;
+
     void CorrectCheese(Cheese Type)
     {
         Happiness += 5;
@@ -176,6 +179,7 @@ public class Punter : StateObject
         if(Health<=0)
         {
             SitIn.Occupied = false;
+            temp.TotalMoney -= 30;
             Destroy(gameObject);
         }
 
