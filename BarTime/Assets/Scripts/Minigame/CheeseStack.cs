@@ -20,12 +20,6 @@ public class CheeseStack : MonoBehaviour
         RestockCheese();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-   
-    }
-
     public void GiveCheese()
     {
         if(remainingCheese > 0)

@@ -22,6 +22,8 @@ public class Character : MonoBehaviour
 
 	public bool timerFinished = true;
 
+	[SerializeField] TMPro.TextMeshProUGUI JukeboxTimer;
+
 	void Movement()
 	{
 
@@ -43,6 +45,9 @@ public class Character : MonoBehaviour
 	void Start()
 	{
 		Player = GetComponent<CharacterController>();
+
+		JukeboxTimer = jukebox.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+
 	}
 	public struct Punt
 	{
@@ -131,6 +136,8 @@ public class Character : MonoBehaviour
 		Movement();
 
 		Timer();
+		DisplayTimerOverJukebox();
+
 
 		if (Input.GetKeyDown("e"))
 		{
@@ -222,11 +229,25 @@ public class Character : MonoBehaviour
 
 	void Timer()
 	{
+
 		targetTime -= Time.deltaTime;
 
 		if (targetTime <= 0.0f)
 		{
 			timerFinished = true;
+			targetTime = 0;
+		}
+	}
+
+	void DisplayTimerOverJukebox()
+	{
+		if (!timerFinished)
+		{
+			JukeboxTimer.text = Mathf.RoundToInt(targetTime).ToString();
+		}
+		else
+		{
+			JukeboxTimer.text = "Ready";
 		}
 	}
 }
