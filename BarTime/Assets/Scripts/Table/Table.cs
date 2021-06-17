@@ -64,7 +64,7 @@ public class Table : MonoBehaviour
 			chair.transform.LookAt(point);
 
 			/* Adjust height */
-			chair.transform.position = new Vector3(chair.transform.position.x, 0.3f, chair.transform.position.z);
+			chair.transform.position = new Vector3(chair.transform.position.x, 0.4f, chair.transform.position.z);
 		}
 	}
 }

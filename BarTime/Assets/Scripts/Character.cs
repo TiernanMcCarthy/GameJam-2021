@@ -250,5 +250,4 @@ public class Character : MonoBehaviour
 			JukeboxTimer.text = "Ready";
 		}
 	}
-
 }
