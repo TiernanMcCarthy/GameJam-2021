@@ -12,6 +12,7 @@ public class LeaveState : State
         ManagerMan local = GameObject.FindObjectOfType<ManagerMan>();
         temp.MoveToLocation = local.Exit.transform.position;
         temp.Target = local.Exit;
+        temp.SitIn.Occupied = false;
         temp.Rig.isKinematic = false;
         temp.CurrentState = new Move();
         if (temp.NumberOfCheeseToSatisfy <= 0)

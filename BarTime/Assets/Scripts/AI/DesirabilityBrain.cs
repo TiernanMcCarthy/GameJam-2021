@@ -82,12 +82,17 @@ public class DesirabilityBrain
         {
             if (hitList[i].gameObject != MainActor.gameObject && hitList[i].gameObject.GetComponent<Chair>())
             {
+                 if (MainActor != null)
+                 {
+                    //Debug.Log("GISAihjsafhjsafhjsafhsaf");
 
-                if (hitList[i].gameObject.GetComponentInParent<Chair>().Occupied == false && hitList[i].gameObject.GetComponentInParent<Chair>().Owner.Team==MainActor.Team )
-                {
-                    Dist Close = new Dist(i, hitList[i].gameObject.GetComponentInParent<Chair>());
-                    ClosestPositions.Add(Close);
-                }
+                    if (hitList[i].gameObject.GetComponent<Chair>().Occupied == false && hitList[i].gameObject.GetComponent<Chair>().Owner.Team == MainActor.Team)
+                    {
+                        Dist Close = new Dist(i, hitList[i].gameObject.GetComponentInParent<Chair>());
+                        ClosestPositions.Add(Close);
+                    }
+                 }
+                    //Debug.Log("HEosafjsafhnsafhjsaf");
             }
         }
         if (ClosestPositions.Count != 0)
@@ -115,6 +120,7 @@ public class DesirabilityBrain
         }
 
         //DebugChair.tag = "NAHHH MATE";
+        MainActor.SelfDestruct();
         return 999999;
     }
         private float HealthStatus(Punter punter)

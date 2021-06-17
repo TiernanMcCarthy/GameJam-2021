@@ -363,10 +363,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yeetItem: 0
   itemPrefabList:
-  - {fileID: 1076028636094627190, guid: 69a83d2e53012da468e82f7215ec118e, type: 3}
+  - {fileID: 313788959444387181, guid: 6c9a462eabe07ce4a95544c73427bfbf, type: 3}
   - {fileID: 2432632690476805042, guid: 0405606fba36c24419544340405d8ba0, type: 3}
   - {fileID: 6536926009706387203, guid: 138fc82212a1067409d3c7d91e8f8e8d, type: 3}
   - {fileID: 2846470044482597010, guid: 6c36968faf67c074e9e7db743b416c82, type: 3}
+  - {fileID: 851706072646035721, guid: f110d37a9c01de543b8dac4f40bc1da4, type: 3}
   minHeight: 0.8
   maxHeight: 2.5
   target: {fileID: 0}
@@ -383,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163f7be90f9da5d4caaabb791e851d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraObject: {fileID: 0}
   UseStaticBillBoard: 0
 --- !u!114 &3463425086825845549
 MonoBehaviour:

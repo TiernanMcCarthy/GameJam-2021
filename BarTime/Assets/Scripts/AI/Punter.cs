@@ -262,8 +262,10 @@ public class Punter : StateObject
                 sorted.Add(el);
             }
         }
-
-        Victim = sorted[Random.Range(0, sorted.Count - 1)];
+        if (sorted.Count != 0)
+        {
+            Victim = sorted[Random.Range(0, sorted.Count - 1)];
+        }
 
     }
 
@@ -277,5 +279,11 @@ public class Punter : StateObject
         }
 
     }
+
+    public void SelfDestruct()
+    {
+        Destroy(gameObject);
+    }
+
 
 }

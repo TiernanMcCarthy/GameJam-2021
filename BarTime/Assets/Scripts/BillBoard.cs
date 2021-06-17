@@ -5,13 +5,16 @@ using UnityEngine;
 public class BillBoard : MonoBehaviour
 {
 
-    private Camera cameraObject;
+    public GameObject cameraObject;
+
+
+
 
     public bool UseStaticBillBoard;
     // Start is called before the first frame update
     void Start()
     {
-        cameraObject = Camera.main;
+        cameraObject = Camera.main.gameObject;
     }
 
     // Update is called once per frame

@@ -8,28 +8,35 @@ public class SittingState : State
     public override void Execute(StateObject s)
     {
         
-
+        
         Punter temp = s.GetComponent<Punter>();
-
-        DesirabilityBrain desirabilityBrain = new DesirabilityBrain(temp);
-
-        // Debug.Log(desirabilityBrain.ThrowBottleDesirability());
-
-        if (desirabilityBrain.ThrowBottleDesirability() > temp.ThrowLiklihood)
+        
+        if (temp != null)
         {
-            temp.FindTarget();
-            temp.tp.target = temp.Victim.gameObject;
-            temp.tp.yeetItem = true;
-            temp.SetThrowTime();
-        }
+            temp.Rig.velocity = Vector3.zero;
+            DesirabilityBrain desirabilityBrain = new DesirabilityBrain(temp);
+
+            // Debug.Log(desirabilityBrain.ThrowBottleDesirability());
+
+            if (desirabilityBrain.ThrowBottleDesirability() > temp.ThrowLiklihood)
+            {
+                temp.FindTarget();
+                if (temp.Victim != null)
+                {
+                    temp.tp.target = temp.Victim.gameObject;
+                    temp.tp.yeetItem = true;
+                    temp.SetThrowTime();
+                }
+            }
 
 
-        if (temp.Happiness == 0 || temp.Angriness==20)
-        {
-            temp.SatDown = false;
-            temp.CurrentState = new LeaveState();
-            //t
-            //Leave lmao
+            if (temp.Happiness == 0 || temp.Angriness == 20)
+            {
+                temp.SatDown = false;
+                temp.CurrentState = new LeaveState();
+                //t
+                //Leave lmao
+            }
         }
         // throw new System.NotImplementedException();
     }
