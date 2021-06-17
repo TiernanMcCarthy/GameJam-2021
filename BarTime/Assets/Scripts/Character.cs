@@ -14,6 +14,8 @@ public class Character : MonoBehaviour
 
     public Cheese CurrentCheese;
 
+    public BIn BIN;
+
     void Movement()
     {
 
@@ -124,14 +126,15 @@ public class Character : MonoBehaviour
 
         if(Input.GetKeyDown("e"))
         {
-            if (CurrentCheese != null)
+            if (CurrentCheese != null && Vector3.Distance(BIN.transform.position,transform.position)>1.0f)
             {
                 GiveCheese();
             }
             else
             {
+                bool Good = false;
                 Physics.OverlapSphere(transform.position,2.0f);
-                Collider[] hitList = Physics.OverlapSphere(transform.position, 30);
+                Collider[] hitList = Physics.OverlapSphere(transform.position, 2);
                 List<CheeseStacky> ClosestPositions = new List<CheeseStacky>();
 
                 for (int i = 0; i < hitList.Length; i++)
@@ -166,6 +169,25 @@ public class Character : MonoBehaviour
                     //MainActor.Target = ClosestPositions[0].Sample;
                     // return Vector3.Distance(ClosestPositions[0].Sample.transform.position, MainActor.transform.position);
                     ClosestPositions[0].Sample.GiveCheese();
+                    Good = true;
+                }
+                if (Good==false)
+                {
+                    foreach (Collider col in hitList)
+                    {
+                        if (col.gameObject.GetComponent<BIn>())
+                        {
+                            if (CurrentCheese != null)
+                            {
+
+                                //CurrentTarget.RecieveCheese(CurrentCheese);
+                                Debug.Log("FSAfhjsafhjsafhfsa");
+                                CurrentCheese.transform.rotation = Quaternion.Euler(new Vector3(30, 30, 30));
+                                Destroy(CurrentCheese.gameObject);
+                                CurrentCheese = null;
+                            }
+                        }
+                    }
                 }
 
             }
