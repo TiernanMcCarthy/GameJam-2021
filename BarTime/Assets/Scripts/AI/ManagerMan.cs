@@ -36,6 +36,9 @@ public class ManagerMan : MonoBehaviour
     public float StartTime = 0;
 
     public float RunTime = 300;
+
+    bool Loaded = false;
+
     private void RandomisePunter(ref Punter Edit)
     {
         //Happiness
@@ -184,19 +187,32 @@ public class ManagerMan : MonoBehaviour
     {
         SpawnPrefab();
         StartTime = Time.time;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void FixedUpdate()
     {
-        CheckPuntersList();
-        CheckStateOfPunters();
+        //CheckPuntersList();
+        //CheckStateOfPunters();
         if (Input.GetKeyDown("a"))
         {
             //SpawnPrefab();
         }
+        if (Loaded == false)
+        {
+            MoneyGaming.text = TotalMoney.ToString();
+            TimeGaming.text = "Remaining: " + Mathf.RoundToInt(RunTime - (Time.time - StartTime)).ToString();
+            CheckPuntersList();
+            CheckStateOfPunters();
+        }
 
-        MoneyGaming.text =TotalMoney.ToString();
-        TimeGaming.text = "Remaining: "+Mathf.RoundToInt(RunTime-(Time.time - StartTime)).ToString();
+        if(Time.time-StartTime==RunTime)
+        {
+            Loaded = true;
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        }
+
+
 
     }
 
