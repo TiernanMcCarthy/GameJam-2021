@@ -206,9 +206,10 @@ public class ManagerMan : MonoBehaviour
             CheckStateOfPunters();
         }
 
-        if(Time.time-StartTime==RunTime)
+        if(Time.time-StartTime>=RunTime && Loaded==false)
         {
             Loaded = true;
+            transform.position += new Vector3(3333, 333, 3333);
             UnityEngine.SceneManagement.SceneManager.LoadScene(2);
         }
 

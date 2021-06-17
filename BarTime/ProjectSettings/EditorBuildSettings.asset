@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AI TEST.unity
-    guid: aea0c330b6d48224fa1bcfeea3271397
+    path: Assets/Scenes/MainMenu.unity
+    guid: e3049a05bb2930540afb7217764aecf8
+  - enabled: 1
+    path: Assets/Scenes/AI TEST REALLY BROKEN LMAO.unity
+    guid: 2c7c5990c5dc42141982350f381f2841
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: b4ef56fdfbf0f174a9bdb16eefa8b2af
   m_configObjects: {}
