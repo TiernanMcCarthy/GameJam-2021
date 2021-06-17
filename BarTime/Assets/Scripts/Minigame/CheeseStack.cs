@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheeseStack : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class CheeseStack : MonoBehaviour
     public Cheese thisCheese;
     [SerializeField] int cheeseDecider; //cheat way of setting which cheese this stack will use from the editor - 0 = strength / 1 = speed / 2 = smart / 3 = charisma
     public Character player;
-
+    [SerializeField] TMPro.TextMeshProUGUI thisText;
     [SerializeField] GameObject[] ModelStack;
     void Start()
     {
@@ -31,6 +32,7 @@ public class CheeseStack : MonoBehaviour
         {
            // ModelStack[remainingCheese - 1].SetActive(false);
             remainingCheese--;
+            thisText.text = remainingCheese.ToString();
             Cheese temp = Instantiate(thisCheese);
             player.CurrentCheese = temp;
         }
@@ -42,10 +44,11 @@ public class CheeseStack : MonoBehaviour
     public void RestockCheese()
     {
         remainingCheese = 4;
-        for(int i = 0; i < 4; i++)
-        {
-            //ModelStack[i].SetActive(true);
-        }
+        thisText.text = remainingCheese.ToString();
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    //ModelStack[i].SetActive(true);
+        //}
     }
 
     void SetCheeseType()
