@@ -40,7 +40,11 @@ public class Punter : StateObject
     public Punter Victim;
 
     public Chair SitIn;
-    
+
+    public GameObject BlueJersey;
+    public GameObject RedJersey;
+
+
     //Local Variables
     private float DecayTime;
     private float ThrowTime = 0;
@@ -136,7 +140,14 @@ public class Punter : StateObject
         Rig = GetComponent<Rigidbody>();
         tp = GetComponent<ThrowingScript>();
 
-        
+        if (Team)
+        {
+            BlueJersey.gameObject.SetActive(false);
+        }
+        else
+        {
+            RedJersey.gameObject.SetActive(false);
+        }
     }
 
 
