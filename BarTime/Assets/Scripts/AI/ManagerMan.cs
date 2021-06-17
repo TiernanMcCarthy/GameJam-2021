@@ -196,7 +196,7 @@ public class ManagerMan : MonoBehaviour
         }
 
         MoneyGaming.text =TotalMoney.ToString();
-        TimeGaming.text = "Remaining: "+(RunTime-(Time.time - StartTime)).ToString();
+        TimeGaming.text = "Remaining: "+Mathf.RoundToInt(RunTime-(Time.time - StartTime)).ToString();
 
     }
 
