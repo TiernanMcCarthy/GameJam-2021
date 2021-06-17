@@ -12,7 +12,7 @@ public class Minigame : MonoBehaviour
 
     [SerializeField]GameObject canvas;
     [SerializeField] CheeseStack thisStack;
-
+    [SerializeField] Character matthewMcCarter;
     [Header("Arrow Sprites")]
     [SerializeField] Sprite Sprite_UP;
     [SerializeField] Sprite Sprite_DOWN;
@@ -38,6 +38,7 @@ public class Minigame : MonoBehaviour
         //code for actually playing the arrow game is stored here
         if(isPlaying)
         {
+            
             Debug.Log("Press " + KeySequence[currentArrow]);
             if (Input.GetKeyDown(KeySequence[currentArrow]))
             {
@@ -90,7 +91,9 @@ public class Minigame : MonoBehaviour
             }
             canvas.SetActive(true);
             currentArrow = 0;
-            isPlaying = true;
+            matthewMcCarter.Speed = 0;
+            StartCoroutine(OneSecDelay());
+            //isPlaying = true;
             StartCoroutine(GameCountdown());
         }
 
@@ -151,6 +154,11 @@ public class Minigame : MonoBehaviour
     IEnumerator GameCountdown()
     {
         yield return new WaitForSeconds(1);
+        if (isPlaying)
+        {
+            TimerText.text = "3";
+        }
+        yield return new WaitForSeconds(1);
         if(isPlaying)
         {
             TimerText.text = "2";
@@ -184,6 +192,7 @@ public class Minigame : MonoBehaviour
 
     IEnumerator WaitToStockCheese()
     {
+        matthewMcCarter.Speed = 5;
         canPlay = false;
         yield return new WaitForSeconds(1);
         canvas.SetActive(false);
@@ -195,6 +204,7 @@ public class Minigame : MonoBehaviour
     }
     IEnumerator WonGame()
     {
+        matthewMcCarter.Speed = 5;
         canPlay = false;
         Debug.Log("cheese");
         thisStack.RestockCheese();
@@ -202,5 +212,13 @@ public class Minigame : MonoBehaviour
         canvas.SetActive(false);
         canPlay = true;
         TimerText.text = "3";
+    }
+
+    IEnumerator OneSecDelay()
+    {
+        TimerText.text = "WAIT";
+        yield return new WaitForSeconds(1);
+        TimerText.text = "3";
+        isPlaying = true;
     }
 }
