@@ -44,7 +44,7 @@ public class ManagerMan : MonoBehaviour
         //Happiness
         Edit.Happiness += Random.Range(-2, 2);
         //Angriness
-        Edit.Angriness += Random.Range(-2, 4);
+        Edit.Angriness += Random.Range(-2, 5);
         //Generosity
         Edit.Generosity += Random.Range(-5, 5);
         //Patience
@@ -52,7 +52,7 @@ public class ManagerMan : MonoBehaviour
         //Hunger
         Edit.Hunger += Random.Range(-2, 2.1f);
 
-
+        Edit.NumberOfCheeseToSatisfy = 1;
 
         int MaxCheese = Random.Range(1, 3);
 
@@ -105,6 +105,18 @@ public class ManagerMan : MonoBehaviour
             Edit.Intelligence = 10;
             Edit.Strength = 10;
         }
+
+
+        //DUM DUMB DUMB I AM INCREDIBLY LAZY
+
+        if(Edit.SpeedCheese==10 && Edit.Intelligence==10 && Edit.Strength==10 && Edit.Charisma==10)
+        {
+
+            Edit.SpeedCheese = Random.Range(1, 5);
+            Edit.Intelligence = Random.Range(1, 5);
+            Edit.NumberOfCheeseToSatisfy = 2;
+        }
+
 
         //Cheese Moods
         //Intelligence + 2

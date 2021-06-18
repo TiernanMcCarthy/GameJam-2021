@@ -153,11 +153,7 @@ public class Minigame : MonoBehaviour
 
     IEnumerator GameCountdown()
     {
-        yield return new WaitForSeconds(1);
-        if (isPlaying)
-        {
-            TimerText.text = "3";
-        }
+       
         yield return new WaitForSeconds(1);
         if(isPlaying)
         {
@@ -179,7 +175,7 @@ public class Minigame : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (isPlaying)
         {
-            TimerText.text = "FAILED";
+            TimerText.text = "FAIL";
             isPlaying = false;
             StartCoroutine(WaitToStockCheese());
             yield break;

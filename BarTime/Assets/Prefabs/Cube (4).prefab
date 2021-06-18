@@ -299,7 +299,7 @@ MonoBehaviour:
   Rig: {fileID: 0}
   BaseSpeed: 0
   Health: 30
-  Speed: 5
+  Speed: 2.5
   Damage: 10
   SatDown: 0
   Team: 0
