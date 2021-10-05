@@ -19,6 +19,7 @@ public class LeaveState : State
         {
             temp.SitIn.DropMoney(temp.Generosity * Multiplier);
         }
+        temp.SitIn.Owner.inhabitantList.Remove(temp);
         temp.SitIn = null;
     }
 

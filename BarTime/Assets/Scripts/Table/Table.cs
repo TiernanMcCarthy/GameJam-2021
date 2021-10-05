@@ -18,6 +18,8 @@ public class Table : MonoBehaviour
 	public List<Chair> chairList;
 
 	public bool Team;
+
+	public bool ShouldShowUI = false;
 	
 	public void Start()
 	{
@@ -67,4 +69,6 @@ public class Table : MonoBehaviour
 			chair.transform.position = new Vector3(chair.transform.position.x, 0.4f, chair.transform.position.z);
 		}
 	}
+
+	
 }

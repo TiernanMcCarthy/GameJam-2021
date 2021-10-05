@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraUI : MonoBehaviour
 {
     Camera Cam;
-
+    Table PreviousTable;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +23,33 @@ public class CameraUI : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.GetComponent<PopulateUI>())
+                if (hit.collider.gameObject.GetComponent<Table>())
                 {
-                    PopulateUI temp = hit.collider.gameObject.GetComponent<PopulateUI>();
-                    temp.HideUI();
+                    //Debug.Log("Hit the table king");
+                    Table thisTable = hit.collider.gameObject.GetComponent<Table>();
+                    ToggleTableUi(thisTable);
+                    if(PreviousTable != null && PreviousTable != thisTable)
+                    {
+                        ToggleTableUi(PreviousTable);
+                    }
+                    PreviousTable = thisTable;
+                }
+                else
+                {
+                    Debug.Log("yo man we missed :(... sorry for letting you down :/");
                 }
             }
+        }
+    }
+
+    void ToggleTableUi(Table ToToggle)
+    {
+        ToToggle.ShouldShowUI = !ToToggle.ShouldShowUI;
+        Debug.Log("The value for ShouldShowUI is " + ToToggle.ShouldShowUI);
+        foreach (Punter p in ToToggle.inhabitantList)
+        {
+            if(p!=null)
+            p.gameObject.GetComponent<PopulateUI>().HideUI();
         }
     }
 }

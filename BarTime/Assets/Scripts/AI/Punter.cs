@@ -169,7 +169,7 @@ public class Punter : StateObject
 
     public void Update()
     {
-        Debug.Log(CurrentState);
+        //Debug.Log(CurrentState);
         if (Active)
         {
             CurrentState.Execute(this);
@@ -210,6 +210,11 @@ public class Punter : StateObject
                         Target.GetComponent<Chair>().Occupied = true;
                         SatDown = true;
                         SitIn = Target.GetComponent<Chair>();
+                        SitIn.Owner.inhabitantList.Add(this);
+                        if(SitIn.Owner.ShouldShowUI)
+                        {
+                            GetComponent<PopulateUI>().HideUI();
+                        }
                         Target = null;
                         CurrentState = new SittingState();
                     }
@@ -297,6 +302,8 @@ public class Punter : StateObject
 
     public void SelfDestruct()
     {
+        if(SitIn != null)
+        SitIn.Owner.inhabitantList.Remove(this);
         Destroy(gameObject);
     }
 
